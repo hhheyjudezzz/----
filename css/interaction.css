@@ -226,10 +226,58 @@ li{
 #large_img{
 	width: 80%;
 	height: 100%;
+	position: relative;
 }
-#large_img img{
-	width: 100%;
+/*#large_img img{
+	width: 25%;
 	height: auto;
+}*/
+/*大图滚动*/
+.large_ul{
+	width: 100%;
+	height: 100%;
+}
+.large_li:nth-child(1){
+	width: 400%;
+	height: 100%;
+}
+.large_ul>.large_li:nth-child(1)~li{
+	display: none;
+}
+#cottage_img img{
+	width: 25%;
+	height: auto;
+}
+#cottage_img img:nth-child(1)~img{
+	display: none;
+}
+.left{
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.left>img{
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	margin-top: -24px;
+	display: none;
+}
+.right>img{
+	position: absolute;
+	top: 50%;
+	right: 20%;
+	margin-top: -24px;
+	display: none;
+}
+.right{
+	width: 20%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	position: absolute;
 }
 .min_img_ul{
 	width: 17%;
@@ -284,7 +332,7 @@ li{
     color: #424242;
     margin-top: 3%;
 }
-.content_ul_content{
+.intro_work{
 	width: 100%;
 	margin-top: 2%;
 	overflow: hidden;
@@ -302,32 +350,18 @@ li{
 		margin-top: 13%
 	}
 } 
-.content_ul_content .content_list{
+.intro_work .work_list{
 	float:left;
 	position: relative;
 	width: 19.5%;
 	height: 100%;
 	margin-right: 9%;
 }
-.content_ul_content .content_list>.list_img{
+.intro_work .work_list img{
 	width: 105%;
 }
-.content_ul_content .content_list>#imgs{
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
-}
-.content_ul_content .content_list>span{
-	font-size: 24px;
-    color: #424242;
-    text-align: center;
-    display: block;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-}
-.content_ul_content .content_list>p{
+
+.intro_work .work_list>p{
 	font-size: 15px;
     color: #777;
     font-family: '微软雅黑';
@@ -335,12 +369,14 @@ li{
     width: 90%;
     margin: 0 auto;
 }
-.content_wrap .img_foot{
-	width: 100%;
-	height: 30%;
-	position: absolute;
-	bottom: 0%;
+
+#auUl{
+	padding-left: 11.7%;
 }  
+#adLi{
+	width: 16%;
+	margin-right: 4.2%;
+}
 /*----------foot-----------*/
 #wrap_foot{
 	width: 100%;

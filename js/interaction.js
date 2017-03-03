@@ -110,3 +110,49 @@ backTop.onclick=function(){
 		}
 	},20)
 }
+	//大图滚动
+var imgNum =0
+$right=$(".right");
+$right.hover(function(){
+	$(this).children().fadeIn()
+},function(){
+	$(this).children().fadeOut()
+})
+$right.on("click",function(){
+	console.log($(".large_li:visible"))
+	/*$(".large_li:visible").css({
+		"margin-left":"-=100%"
+	})*/
+	if(imgNum<$(".large_li:visible img").length-1){
+		imgNum++; 
+	}
+	$(".large_li:visible img").eq(imgNum).css({
+		"display":"block"
+	}).prev().css({
+		"display":"none"
+	})
+
+})
+$left=$(".left");
+$left.hover(function(){
+	$(this).children().fadeIn()
+},function(){
+	$(this).children().fadeOut()
+})
+$left.on("click",function(){
+	if(imgNum>0){
+		imgNum--; 
+	}
+	$(".large_li:visible img").eq(imgNum).css({
+		"display":"block"
+	}).next().css({
+		"display":"none"
+	})
+
+})
+	//小图点击
+
+$minImg=$(".min_img_li img");
+$minImg.on("click",function(){
+	console.log($(this).parent().index())
+})

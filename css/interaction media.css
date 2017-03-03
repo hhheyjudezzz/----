@@ -20,6 +20,9 @@
 		font: 60px/135px bold;
 		font-weight: bold;
 	}
+	#nav_wrap{
+	height: 175%;
+	}
 	
 }
 
@@ -32,6 +35,9 @@
 	}
 	.content_ul_content .content_list>p{
 		font-size: 14px;
+	}
+	#nav_wrap{
+	height: 165%;
 	}
 }
 @media screen and (max-width: 1367px ){
@@ -79,7 +85,7 @@
 	}
 	/*调整布局高度*/
 	#nav_wrap{
-		height: 75%;
+	height: 155%;
 	}
 	.content_wrap{
 		height: 80%;
@@ -88,6 +94,19 @@
 }
 
 @media screen and (max-width: 1120px ){
+	#nav {
+	    padding-left: 1.5%;
+	}
+	#scroll_wrap {
+		margin-top: 11%;
+	    padding-left: 1%;
+	}
+	#scroll_inner {
+    	width: 98%;
+	}
+	#large_img {
+    	width: 81%;
+	}
 	.navUl{
 		display: none;
 	}
@@ -108,12 +127,34 @@
 	.content_ul_content {
 	    margin-top: 18%;
 	}
+	#nav_wrap {
+    	height: 151%;
+	}
+	.intro_work {
+     padding-left:0%; 
+	}
+	.intro_work .work_list {
+	    width: 31.5%;
+	    margin-right: 0.8%;
+	}
+	#adLi {
+   	 width: 20.5%;
+    	margin-right: 4.2%;
+	}
+	.intro_title {
+	    padding-left: 3%;
+	}
 
 }
 @media screen and (max-width: 854px ){
-
+	#nav_wrap {
+    	height: 137%;
+	}
 }
 @media screen and (max-width: 640px ){
+	#scroll_wrap {
+		margin-top: 14%;
+	}
 	.content_ul_content{
 		padding-left: 5%;
 	}
@@ -134,5 +175,8 @@
 	}
 	#picture_wrap .pic_inner{
 	width: 49%;
+	}
+	#nav_wrap {
+    	height: 125%;
 	}
 }
