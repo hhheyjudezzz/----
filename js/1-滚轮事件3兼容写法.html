@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			margin: 0 auto;
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+<script type="text/javascript">
+	// 滚轮事件的兼容写法（兼容火狐和非火狐浏览器）
+	
+	// 参数说明：element元素,upFn滚轮向上的函数,downFn滚轮向下的函数
+	function mouseWheelFn(element,upFn,downFn){
+		element.onmousewheel = fn;
+		// 判断浏览器是否支持addEventListener方法
+		if(window.addEventListener){
+			element.addEventListener("DOMMouseScroll",fn,false);
+		}
+
+		// 函数,判断用户滚轮向上还是向下
+		function fn(e){
+			var e = e || window.event;
+			// 判断滚轮方向
+			// 滚轮向上
+			if(e.wheelDelta > 0 || e.detail < 0){
+				upFn();
+			}else{
+				downFn();
+			}
+
+			// 阻止冒泡
+			e.cancelBubble = true;
+			e.stopPropagation();
+		}
+	}
+
+	var div = document.getElementById("div");
+	var v = 10;
+	mouseWheelFn(div,function(){
+		div.style.width = div.offsetWidth - v + "px";
+		div.style.height = div.offsetHeight - v + "px";
+		div.innerText = "滚轮向下";
+	}, function(){
+		div.style.width = div.offsetWidth + v + "px";
+		div.style.height = div.offsetHeight + v + "px";
+		div.innerText = "滚轮向上";
+	})
+</script>
+</html>

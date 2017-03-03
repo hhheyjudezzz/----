@@ -1,0 +1,138 @@
+/* 响应式布局 */
+@media screen and (max-width: 1900px){
+	.bgImg{
+		height: 100%;
+	}
+	#content_foot>.foot_ul{
+		padding-left: 8.8%;
+		margin-top: 6%;
+	}
+	.foot_li{
+		margin-right: 3.2%;
+	}
+	.foot_li>.foot_title{
+		font-size: 25px;
+	}
+	.foot_li>.foot_text{
+		font-size: 20px;
+	}
+	.foot_li>.foot_text>.text_num{
+		font: 60px/135px bold;
+		font-weight: bold;
+	}
+	
+}
+
+@media screen and (max-width: 1600px){
+	.content_titile span{
+		font-size:30px;
+	}
+	.content_ul_content .content_list>span{
+		font-size: 20px;
+	}
+	.content_ul_content .content_list>p{
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 1367px ){
+	.logoImg{
+		width: 230px;
+	}
+	.navList{
+	margin-left: 1%;
+	}
+	.box{
+		width: 280px;
+		height: 375px;
+		border-radius: 5px;
+	    margin-top: -187px;
+	}
+	.box_content{
+		top: 70px;
+	}
+	.box_input{
+		margin-top: 10px;
+		/*padding-left: 12px;*/
+		width: 220px;
+		height: 25px;
+	}
+	.box_input input{
+		height: 25px;
+		width: 165px;
+	}
+	.box_input:nth-last-child(2){
+		height: 95px;
+		padding-left: 0;
+	}
+	.box_input:nth-last-child(2) textarea{
+		height: 95px;
+
+	}
+	.box_btn{
+   		margin-top: 8px;
+	}
+	.box_content>.logoImg{
+		width: 224px;
+	    height: 224px;
+	  	margin-top: 35px;
+   		margin-left: 2px;
+	}
+	/*调整布局高度*/
+	#nav_wrap{
+		height: 75%;
+	}
+	.content_wrap{
+		height: 80%;
+	}
+	
+}
+
+@media screen and (max-width: 1120px ){
+	.navUl{
+		display: none;
+	}
+	#nav_btn{
+		display:block;
+	}
+	.content_ul_content{
+		padding-left: 2.5%;
+	}
+	.content_ul_content .content_list{
+		width: 20%;
+		height: 100%;
+		margin-right: 5%;
+	}
+	.content_ul_content .content_list>p{
+		font-size: 15px;
+	}
+	.content_ul_content {
+	    margin-top: 18%;
+	}
+
+}
+@media screen and (max-width: 854px ){
+
+}
+@media screen and (max-width: 640px ){
+	.content_ul_content{
+		padding-left: 5%;
+	}
+	.content_ul_content .content_list{
+		width: 40%;
+		height: 100%;
+		margin-right: 10%;
+	}
+	/*调整布局高度*/
+	#nav_wrap{
+		height: 75%;
+	}
+	#nav_wrap>.ani_span{
+	    font-size: 35px;
+	}
+	.content_wrap{
+		height: 92%;
+	}
+	#picture_wrap .pic_inner{
+	width: 49%;
+	}
+}
