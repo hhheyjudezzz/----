@@ -119,16 +119,25 @@ $right.hover(function(){
 	$(this).children().fadeOut()
 })
 $right.on("click",function(){
-	console.log($(".large_li:visible"))
-	/*$(".large_li:visible").css({
-		"margin-left":"-=100%"
-	})*/
-	if(imgNum<$(".large_li:visible img").length-1){
+	var $introP=$(".p_inner:visible p")
+	var $liVisble =$(".large_li:visible img")
+	$liVisble.eq(imgNum).css({
+		"display":"none"
+	})
+	if(imgNum<$liVisble.length-1){
+		$liVisble.eq(imgNum).next().css({
+			"display":"block"
+		})		
 		imgNum++; 
+	}else{
+		$liVisble.eq(0).css({
+			"display":"block"
+		})
+		imgNum=0;	
 	}
-	$(".large_li:visible img").eq(imgNum).css({
+	$introP.eq(imgNum).css({
 		"display":"block"
-	}).prev().css({
+	}).siblings().css({
 		"display":"none"
 	})
 
@@ -140,19 +149,53 @@ $left.hover(function(){
 	$(this).children().fadeOut()
 })
 $left.on("click",function(){
-	if(imgNum>0){
-		imgNum--; 
-	}
-	$(".large_li:visible img").eq(imgNum).css({
-		"display":"block"
-	}).next().css({
+	var $introP=$(".p_inner:visible p")
+	var $liVisble =$(".large_li:visible img")
+	$liVisble.eq(imgNum).css({
 		"display":"none"
 	})
-
+	if(imgNum>0){
+		$liVisble.eq(imgNum).prev().css({
+			"display":"block"
+		})		
+		imgNum--; 
+	}else{
+		$liVisble.eq($liVisble.length-1).css({
+			"display":"block"
+		})
+		imgNum=$liVisble.length-1;		
+	}
+	$introP.eq(imgNum).css({
+		"display":"block"
+	}).siblings().css({
+		"display":"none"
+	})
 })
 	//小图点击
-
-$minImg=$(".min_img_li img");
+var $largeLi=$(".large_li")
+var $pInner=$(".p_inner")
+$minImg=$(".min_img_li");
 $minImg.on("click",function(){
-	console.log($(this).parent().index())
+	imgNum =0
+	$(".large_li:visible").css({
+		"display":"none"
+	})
+	$largeLi.eq($(this).index()).css({
+			"display":"block"
+	})
+	$(".p_inner:visible").css({
+		"display":"none"
+	})
+	$pInner.eq($(this).index()).css({
+			"display":"block"
+	})	
 })
+		//小图上下滚动
+$carUl=$(".car_ul");
+$carUl.hover(function(){
+	console.log($(this).children().eq(0))
+	$(this).children().eq(0).children().fadeIn()
+},function(){
+	$(this).children().eq(0).children().fadeOut()
+})
+
