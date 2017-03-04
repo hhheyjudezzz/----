@@ -153,46 +153,100 @@ window.onresize=function(){
 	}
 }
 var $mask=$("#mask");
+var $maskImg=$("#mask_img");
 	//没加过渡效果
 $(AllImgDiv).on("mouseover",function(){
+	console.log(1);
+	$maskImg.appendTo($(this));
 	$mask.appendTo($(this)).css({
 		"width":$(this).width()+"px",
 		"height":$(this).height()+"px",
 		"display":"block"
 	})
-	$(AllImgDiv).on("mouseout",function(){
+	$maskImg.css({
+		"display":"block"
+	})	
+	$(this).on("mouseout",function(){
+		console.log(2);
 		$mask.css({
 			"display":"none"
 		})
+		$maskImg.css({
+			"display":"none"
+		})
+		event.stopPropagation();
 	})
+	event.stopPropagation();
 })
+
 $closeBtn=$("#close_btn");
-var 
+var $right=$(".right");
+var $left=$(".left");
 $mask.on("click",function(){
-	console.log($(this).siblings())
 	var windowScrH=document.body.scrollHeight;
 	var $maskWrap=$("<div></div>").addClass("maskWrap").css({
 		"height":windowScrH,
 	}).appendTo($("body"))
 	var $imgContainer=$("<div></div>").addClass("imgContainer");
+	var $imgWrap=$(this).siblings().eq(0).clone().addClass("imgWrap").appendTo($imgContainer);
+		//保存图片编号
+	imgIndex=$(this).parent().index()
+	var $imgP=$("<p></p>").addClass("img_P").text("室外透视图").appendTo($imgContainer);
+	 $right.css({
+	 	"display":"block"
+	 }).appendTo($imgContainer);
+	$left.css({
+	 	"display":"block"
+	 }).appendTo($imgContainer);
+	
 	$closeBtn.appendTo($imgContainer).css({
 		"display":"block"
-	});
-	var $imgWrap=$(this).siblings().clone().addClass("imgWrap").appendTo($imgContainer);
-	var $imgP=$("<p></p>").addClass("img_P").text("室外透视图").appendTo($imgContainer);
-	
+	});	
 	$imgContainer.appendTo($maskWrap).animate({
 		"margin-left": "-30%",
 		"width": "60%",
 		"height": "auto"
 	},400).css({
-		"margin-top":-0.5*( $(this).height()*100/document.body.clientHeight)+"%",
+		"margin-top":-0.5*( $(this).height()*100/document.body.clientHeight)-10+"%",
 	})
+	console.log($imgWrap.height())
 	$closeBtn.on("click",function(){
-		console.log($mask)
 		$maskWrap.css({
 			"display":"none"
 		})
 	})
+	$maskWrap.on("click",function(){
+		$(this).css({
+			"display":"none"
+		})
+	})
 })
+	//点击事件
+$right.hover(function(){
+	$(this).children().fadeIn()
+},function(){
+	$(this).children().fadeOut()
+})
+$left.hover(function(){
+	$(this).children().fadeIn()
+},function(){
+	$(this).children().fadeOut()
+})
+var imgIndex=0;
+$right.on("click",function(){
+	$(this).siblings(".imgWrap").css({
+		"display":"none"
+	})
+	$(".pic_inner").eq(imgIndex+1).children("img").clone().addClass("imgWrap").prependTo($(".imgContainer"));
+	imgIndex++;
+})
+$left.on("click",function(){
+	$(this).siblings(".imgWrap").css({
+		"display":"none"
+	})
+	$(".pic_inner").eq(imgIndex-1).children("img").clone().addClass("imgWrap").prependTo($(".imgContainer"));
+	imgIndex--;
+})
+
+
 

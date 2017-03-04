@@ -270,10 +270,13 @@ li{
 	height: 300px;
 	display: none;
 }
-#mask img{
+#mask_img{
+	display: block;
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	width:42px;
+	height: auto;
 	margin-top: -20px;
 	margin-left: -21px;
 }
@@ -316,15 +319,19 @@ li{
 }
 .left{
 	width: 30%;
+	height: 100%;
 	position: absolute;
+	left: 0;
 	top: 0;
-	right: 0;
+	display: none;	
 }
 .right{
 	width: 30%;
+	height: 100%;
 	position: absolute;
-	right: 0;
 	top: 0;
+	right: 0;
+	display: none;
 }
 .left>img{
 	position: absolute;
