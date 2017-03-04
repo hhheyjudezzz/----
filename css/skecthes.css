@@ -284,12 +284,61 @@ li{
 	top: 0;
 	left: 0;
 }
-.imgWrap{
+.imgContainer{
+	background-color: white;
 	height: auto;
 	position: fixed;
 	top: 50%;
-	left: 50%;
+	left: 50%;	
 	width: 0%;
+	padding-left: 0.5%	;
+	padding-top: 0.5%;
+}
+ .imgWrap{
+/*	height: auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;*/
+	width: 99%;
+} 
+.img_P{
+	font-size: 14px;
+	color:rgba(27, 25, 25, 0.81);
+	height: 32px;
+	line-height: 32px;
+}
+#close_btn{
+	display: none;
+	cursor: pointer;
+	position: absolute;
+    top: 1.6%;
+    right: 1.2%;
+}
+.left{
+	width: 30%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.right{
+	width: 30%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.left>img{
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	margin-top: -24px;
+	display: none;
+}
+.right>img{
+	position: absolute;
+	top: 50%;
+	right: 20%;
+	margin-top: -24px;
+	display: none;
 }
 /*----------foot-----------*/
 #wrap_foot{

@@ -180,22 +180,85 @@ $minImg.on("click",function(){
 	$(".large_li:visible").css({
 		"display":"none"
 	})
-	$largeLi.eq($(this).index()).css({
+	$(this).parents("#img_wrap").find($largeLi).eq($(this).index()).css({
 			"display":"block"
 	})
-	$(".p_inner:visible").css({
+	/*$(this).parents("#img_wrap").find($pInner).css({
+			"display":"block"
+	}).siblings().css({
 		"display":"none"
-	})
-	$pInner.eq($(this).index()).css({
+	})	*/
+	console.log($(this).parents(".img_all").find($pInner).length)
+	if($(this).parents(".img_all").find($pInner).length){
+		$(".p_inner:visible").css({
+			"display":"none"
+		})
+		$pInner.eq($(this).index()).css({
 			"display":"block"
-	})	
+		})
+	}	
 })
 		//小图上下滚动
 $carUl=$(".car_ul");
+$up=$(".up");
+$down=$(".down")
 $carUl.hover(function(){
-	console.log($(this).children().eq(0))
-	$(this).children().eq(0).children().fadeIn()
+	$up.children().fadeIn();
+	$down.children().fadeIn();
 },function(){
-	$(this).children().eq(0).children().fadeOut()
+	$up.children().fadeOut();
+	$down.children().fadeOut();
+})
+var minNum=0;
+var max = 1;
+
+$down.on("click",function(){
+	var $minImgLi=$(this).parent().find($minImg)
+	var minNone=$(this).parent().find($minImg).length-6
+	console.log(minNone)
+	for(var i = 0; i<minNone;i++){
+		$minImgLi.eq(i).css({
+			"display":"none"
+		})
+		$minImgLi.eq(i+6).css({
+			"display":"block"
+		})
+		minNum++;		
+	}
+})
+$up.on("click",function(){
+	var $minImgLi=$(this).parent().find($minImg)
+	var minNone=$(this).parent().find($minImg).length-6
+	for(var i = 0; i<minNone;i++){
+		$minImgLi.eq(i).css({
+			"display":"block"
+		})
+		$minImgLi.eq(i+6).css({
+			"display":"none"
+		})
+		minNum++;		
+	}	
+})
+ //页面切换
+$imgAll=$(".img_all");
+$scrollLi = $(".scroll_li");
+var allNum=0;
+$scrollLi.on("click",function(){
+	if(allNum!=$(this).index()){
+		$imgAll.eq($(this).index()).css({
+				"display":"block"
+		})
+		$imgAll.eq(allNum).css({
+				"display":"none"
+		})
+		$(this).css({
+			"border-bottom":"2px solid black"
+		})	
+		$(this).siblings().css({
+			"border":"0"
+		})		
+		allNum=$(this).index();
+		}
+
 })
 

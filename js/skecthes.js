@@ -166,18 +166,33 @@ $(AllImgDiv).on("mouseover",function(){
 		})
 	})
 })
+$closeBtn=$("#close_btn");
+var 
 $mask.on("click",function(){
 	console.log($(this).siblings())
 	var windowScrH=document.body.scrollHeight;
-	var maskWrap=$("<div></div>").addClass("maskWrap").css({
+	var $maskWrap=$("<div></div>").addClass("maskWrap").css({
 		"height":windowScrH,
 	}).appendTo($("body"))
-	var $imgWrap=$(this).siblings().clone().addClass("imgWrap");
-	$imgWrap.appendTo(maskWrap).animate({
+	var $imgContainer=$("<div></div>").addClass("imgContainer");
+	$closeBtn.appendTo($imgContainer).css({
+		"display":"block"
+	});
+	var $imgWrap=$(this).siblings().clone().addClass("imgWrap").appendTo($imgContainer);
+	var $imgP=$("<p></p>").addClass("img_P").text("室外透视图").appendTo($imgContainer);
+	
+	$imgContainer.appendTo($maskWrap).animate({
 		"margin-left": "-30%",
-		
 		"width": "60%",
-	},300).css({
+		"height": "auto"
+	},400).css({
 		"margin-top":-0.5*( $(this).height()*100/document.body.clientHeight)+"%",
 	})
+	$closeBtn.on("click",function(){
+		console.log($mask)
+		$maskWrap.css({
+			"display":"none"
+		})
+	})
 })
+
