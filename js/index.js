@@ -66,8 +66,8 @@ function windowDownFn(){
 	var windowChange=windowS%windowH
 	$("html,body").animate({"scrollTop":windowS+windowH-windowChange},500)
 }
-	//浏览器尺寸变化
-/*window.onresize=function(){
+/*	//浏览器尺寸变化
+window.onresize=function(){
 	var windowWidth=document.body.clientWidth
 	if(windowWidth<=1270){
 	 	mouseEvent=null
@@ -89,7 +89,7 @@ var auLi3=document.querySelectorAll(".au_content_list")[2];
 var seriveUlBol=true;
 var auLiBol=true;
 var footNumBol=true;
-// 滚轮事件
+// 滚条事件
 window.onscroll=function(){
 	var scrollTop=document.body.scrollTop||document.documentElement.scrollTop
 	if(scrollTop>windowH*0.5){
@@ -97,7 +97,6 @@ window.onscroll=function(){
 	}else{
 		backTop.style.display="none"
 	}
-	var contentUlTop= navWrap.offsetHeight+seriveUl.offsetTop;
 	if(scrollTop>=navWrap.offsetHeight*0.6&&seriveUlBol){
 		seriveUl.className=seriveUl.className+" serive_ul"
 		seriveUlBol=false;

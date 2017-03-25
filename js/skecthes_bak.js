@@ -133,14 +133,14 @@ var contentUl=document.getElementById('contentUl');
 //插入div
 var marginL=8;
 var heightArr=[];
-// for(var i =0;i<AllImgArr.length;i++){
-//     AllImgArr[i]=new Image();
-//     if(i==AllImgArr.length-1){
-//         AllImgArr[i].onload=function(){
-//             console.log("onload")
-//             imgFn(AllImgArr,AllImgDiv,3)
-//         }
-//     }
+for(var i =0;i<AllImgArr.length;i++){
+    AllImgArr[i]=new Image();
+    if(i==AllImgArr.length-1){
+        AllImgArr[i].onload=function(){
+            console.log("onload")
+            imgFn(AllImgArr,AllImgDiv,3)
+        }
+    }
 
     // var img = new Image();
     // img.src = AllImgArr[i].src;
@@ -150,12 +150,7 @@ var heightArr=[];
     // 		imgFn(AllImgArr,AllImgDiv,3);
     // 	}
     // }
-// }
-
-window.onload = function(){
-	imgFn(AllImgArr,AllImgDiv,3);
 }
-
 function imgFn(imgArr,imgDiv,row){
     console.log("imgFn")
 	for(var i =0;i<imgArr.length;i++){
@@ -226,28 +221,28 @@ function changeHeight(index) {
         picWrap.className = "designPic_top";
 	}
 }
-window.onresize=function(){
-	console.log("resize")
-    windowW=document.body.offsetWidth;
-    windowH=document.body.offsetHeight;
-        //瀑布流改变
-    for(var　i = 0;i<ulBtns.length;i++){
-        if(pageIndex ==i){
-            if(document.body.clientWidth>640){
-                imgFn(picJson[i].img,picJson[i].div,3)
-                picJson[i].div[2].style.top= 0+"px"
-            }else{
-                imgFn(picJson[i].img,picJson[i].div,2)
-            }
-        }
-    }
-    var windowWidth=document.body.clientWidth
-    if(windowWidth<=1270){
-        window.onmousewheel=null
-    }else{
-        mouseEvent=mouseWheelFn(window,windowUpFn,windowDownFn)
-    }
-}
+// window.onresize=function(){
+// 	console.log("resize")
+//     windowW=document.body.offsetWidth;
+//     windowH=document.body.offsetHeight;
+//         //瀑布流改变
+//     for(var　i = 0;i<ulBtns.length;i++){
+//         if(pageIndex ==i){
+//             if(document.body.clientWidth>640){
+//                 imgFn(picJson[i].img,picJson[i].div,3)
+//                 picJson[i].div[2].style.top= 0+"px"
+//             }else{
+//                 imgFn(picJson[i].img,picJson[i].div,2)
+//             }
+//         }
+//     }
+//     var windowWidth=document.body.clientWidth
+//     if(windowWidth<=1270){
+//         window.onmousewheel=null
+//     }else{
+//         mouseEvent=mouseWheelFn(window,windowUpFn,windowDownFn)
+//     }
+// }
 
 var $mask=$("#mask");
 var $maskImg=$("#mask_img");

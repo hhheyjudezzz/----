@@ -11,7 +11,7 @@ li{
 	list-style: none;
 }
 #nav_wrap{
-	height: 185%;
+	height: 205%;
 	position: relative;
 	overflow: hidden;
 	-webkit-tranform-style:preserve-3d;
@@ -348,10 +348,10 @@ li{
 }
 .down img{
 	display: none;
-	top: 50%;
-	left: 50%;
-	margin-left: 70px;
-    margin-top: 6px;
+	bottom: 50%;
+	right: 50%;
+	margin-left: 100px;
+	margin-top: 10px;
 }
 .intro{
 	width: 80%;
@@ -376,7 +376,7 @@ li{
 }
 .intro_work{
 	width: 100%;
-	margin-top: 2%;
+	margin-top: 8%;
 	overflow: hidden;
 	padding-left: 11.7%;
 }
@@ -386,10 +386,10 @@ li{
  
  @keyframes ani_ul{
 	0%{
-		margin-top: 18%
+		margin-top: 8%
 	}
 	100%{
-		margin-top: 13%
+		margin-top: 2%
 	}
 } 
 .intro_work .work_list{

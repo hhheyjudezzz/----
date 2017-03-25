@@ -20,6 +20,14 @@
 		font: 60px/135px bold;
 		font-weight: bold;
 	}
+
+	#contentUl{
+		padding-left: 0%;
+	}
+
+	.contentList{
+		margin-left: 5%;
+	}
 	
 }
 
@@ -83,6 +91,12 @@
 	}
 	.content_wrap{
 		height: 80%;
+	}
+	.design_height{
+		height: 10.5%;
+	}
+	.designPic_top {
+		top: 10.5%;
 	}
 	
 }

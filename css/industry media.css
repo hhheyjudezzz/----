@@ -1,0 +1,91 @@
+/* 响应式布局 */
+@media screen and (max-width: 1900px){
+	.pic_inner img{
+	 	height: 100%;
+		width: auto; 	 	
+	}
+
+
+}
+
+@media screen and (max-width: 1600px){
+
+}
+@media screen and (max-width: 1367px ){
+	.navList{
+	margin-left: 1%;
+	}
+	.box{
+		width: 280px;
+		height: 375px;
+		border-radius: 5px;
+	    margin-top: -187px;
+	}
+	.box_content{
+		top: 70px;
+	}
+	.box_input{
+		margin-top: 10px;
+		/*padding-left: 12px;*/
+		width: 220px;
+		height: 25px;
+	}
+	.box_input input{
+		height: 25px;
+		width: 165px;
+	}
+	.box_input:nth-last-child(2){
+		height: 95px;
+		padding-left: 0;
+	}
+	.box_input:nth-last-child(2) textarea{
+		height: 95px;
+
+	}
+	.box_btn{
+   		margin-top: 8px;
+	}
+	.box_content>.logoImg{
+		width: 224px;
+	    height: 224px;
+	  	margin-top: 35px;
+   		margin-left: 2px;
+	}
+
+	
+}
+
+@media screen and (max-width: 1120px ){
+	#nav {
+	    padding-left: 1.5%;
+	}
+	#scroll_wrap {
+		margin-top: 11%;
+	    padding-left: 1%;
+	}
+	#scroll_inner {
+    	width: 98%;
+	}
+	#large_img {
+    	width: 81%;
+	}
+	.navUl{
+		display: none;
+	}
+	#nav_btn{
+		display:block;
+	}
+
+}
+@media screen and (max-width: 854px ){
+
+}
+@media screen and (max-width: 640px ){
+	.pic_inner{
+    	width: 49.5%;
+    	height: 20%;
+	}
+
+	
+
+}
